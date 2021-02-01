@@ -6,7 +6,7 @@ pickwinner <- function(l) {
   people %>% sample(1)
 } 
 
-#* @apiTitle CodeR PickWinner API
+#* @apiTitle CodeR API
 
 #* Pick a winner 
 #* @param l A comma separated list of items to pick from e.g. A,B,C
