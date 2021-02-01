@@ -6,14 +6,17 @@ pickwinner <- function(l) {
   people %>% sample(1)
 } 
 
-#* @apiTitle CodeR API
+#* @apiTitle CodeR PickWinner API
 
 #* Pick a winner 
-#* @param l Comma separated list of items to pick from e.g. A,B,C
+#* @param l A comma separated list of items to pick from e.g. A,B,C
 #* @get /pickwinner
-function(l = NULL) {
+function(res, l = NULL) {
   if (is.null(l)) {
-    stop("Missing required param 'l'")
+    msg <- "Missing required parameter 'l'"
+    res$status <- 400 # Bad request
+    return(list(error=msg))
   }
-  list(winner = (pickwinner(l)))
+  winner <- pickwinner(l)
+  list(winner = pickwinner(l))
 }

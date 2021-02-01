@@ -14,7 +14,7 @@ heroku git:remote -a pickwinner  # your-heroku-app-name
 heroku stack:set heroku-18
 ```
 ```
-git push heroku master  # or main
+git push heroku main
 ```
 ```
 heroku logs --tail
