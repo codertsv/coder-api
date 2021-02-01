@@ -9,8 +9,11 @@ pickwinner <- function(l) {
 #* @apiTitle CodeR API
 
 #* Pick a winner 
-#* @param l list of CodeRs to pick from (A,B,C)
+#* @param l Comma separated list of items to pick from e.g. A,B,C
 #* @get /pickwinner
-function(l = "") {
-    list(winner = (pickwinner(l)))
+function(l = NULL) {
+  if (is.null(l)) {
+    stop("Missing required param 'l'")
+  }
+  list(winner = (pickwinner(l)))
 }
